@@ -14,16 +14,16 @@ export default function CourseGoalList({ goals, onDeleteGoal }: CoursGoalListPro
     }
     let waringBox: ReactNode;
 
-    if(goals.length>=4){
-        waringBox=(
-            <InfoBox mode="warning">
-            
+    if (goals.length >= 4) {
+        waringBox = (
+            <InfoBox mode="warning" severity="medium">
+                You're collecting a lot of goals.Don't put too much on your plate!
             </InfoBox>
         )
     }
     return (
         <>
-
+            {waringBox}
             <ul>
                 {goals.map((goal) => <li key={goal.id}>
                     <CoursGoal
